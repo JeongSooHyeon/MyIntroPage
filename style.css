@@ -10,13 +10,15 @@
 * {
     margin: 0;
     padding-bottom: 10px;
-    box-sizing:border-box;
+    box-sizing: border-box;
 
 }
 
+.container{
+    max-width : 1000px;
+    border: 1px solid #FFBDBD;
 
-header, main{
-    max-width:800px;
+    margin:auto;
 }
 
 html {
@@ -28,12 +30,15 @@ body {
     font-family: 'Gmarket Sans TTF';
 }
 
-html, header, section{
-    border:1px solid #FFBDBD;
-    padding:10px;
-    margin-bottom: 5px;
-    border-radius: 8px;;
+header {
+    border-bottom: 1px solid #FFBDBD;
 }
+
+html,header,section {
+    /* border:1px solid #FFBDBD; */
+    /* border-radius: 8px; */
+}
+
 h1 {
     color: #FFA4A4;
 
@@ -47,20 +52,73 @@ a:hover {
     color: #FFA4A4;
 }
 
-.mung{
-    display:flex;
-    flex-direction: row;
+.dal {
+    /* display:inline-block; */
+    float: left;
+
 }
 
-img{
-    padding-left:20px;
+.dal img {
+    padding: 10px;
+
 }
 
+.dal ul {
+    padding: 15px;
+}
 
-footer{
+main {
+    /* position:relative; */
+}
+
+.main-left, .main-right{
+    width:49%;
+}
+.main-left {
+    float: left;
+    border-right: 1px solid #FFBDBD;
+}
+
+.main-right {
+    float: left;
+    border-left: 1px solid #FFBDBD;
+    margin-left: -0.5px;
+
+}
+
+.right1 {
+    border-bottom: 1px solid #FFBDBD;
+}
+
+.right2 {
+    border-bottom: 1px solid #FFBDBD;
+}
+
+.left1 {
+    border-bottom: 1px solid #FFBDBD;
+}
+
+.main-left,
+.main-right {}
+
+/* .main-left{
+    position:absolute;
+    width:500px;
+    height:auto;
+}
+.main-right{
+    position:absolute;
+    left : 510px;
+    width: 490px;
+} */
+footer {
+    clear: both;
+    border-top: 1px solid #FFBDBD;
     text-align: center;
-    margin-top : 40px;
-    color : #999;
-    font-size : 14px;
+    padding-top: 30px;
+    margin-top: 40px;
+    color: #999;
+    font-size: 14px;
 }
+
 /*BADFDB*/
