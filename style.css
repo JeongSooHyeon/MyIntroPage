@@ -16,10 +16,7 @@
     max-width: 1000px;
     border: 1px solid #FFBDBD;
     margin: auto;
-}
-
-.inner{
-    padding:20px;
+    min-width:700px;
 }
 header,
 .left1,
@@ -61,7 +58,9 @@ h2 {
     margin-bottom:10px;
     padding-left:20px;
 }
-
+a:link{
+    color:#999;
+}
 a:hover {
     color: #FFA4A4;
 }
@@ -83,6 +82,7 @@ main {
     justify-content: center;
     align-items: stretch;
     flex-wrap:nowrap;
+    
 }
 
 .main-left,
@@ -92,10 +92,14 @@ main {
     flex-direction: column;
     gap: 20px;
     padding-top:20px;
+    min-width:350px;
+    flex-shrink: 0;
 }
+
 
 .main-left {
     border-right: 1px solid #FFBDBD;
+    
 }
 
 .left1 img{
