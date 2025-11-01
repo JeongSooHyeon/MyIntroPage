@@ -17,7 +17,9 @@
     max-width: 1000px;
     border: 1px solid #FFBDBD;
     margin: auto;
-    min-width: 700px;
+    /* min-width: 700px; */
+    border-radius: 10px;
+
 }
 
 header,
@@ -56,102 +58,148 @@ p {
 }
 
 h2 {
-    color: #FFBDBD;
+    color: #FFA4A4;
     border-bottom: 1px dashed #FFBDBD;
     margin-bottom: 10px;
     padding-left: 20px;
 }
 
+h2:hover{
+    color:#FFA4A4;
+    transition:0.2s;
+}
+h2 i{
+    margin-right:5px;
+}
 a:link {
     color: #999;
 }
 
 a:hover {
-    color: #FFA4A4;
+    color: #FFBDBD;
 }
 
 .mung {
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap : wrap;
+    margin : auto 50px;
+
+}
+
+.dal{
+    display : flex;
+    flex-direction: column;
     align-items: center;
 }
-
-.dal img { 
+.dal img {
     /* margin-left: 10px; */
-    max-width: 220px;
-    margin : 0;
+    /* max-width: 220px; */
+    margin: 10px;
     border-radius: 10px;
-width:100%;
 
 }
 
+.dal ul{
+    padding-left : 20px;
+}
 .content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
     flex-wrap: nowrap;
-
 }
 
 .main-left,
 .main-right {
-    width: 50%;
     display: flex;
+    flex:1;
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
-    min-width: 404px;
     flex-shrink: 0;
+
 }
 
 
 .main-left {
-    border-right: 1px solid #FFBDBD;
+    border-right: 1px solid #FFA4A4;
 
 }
 
-.left1 img {
-    padding-left: 20px;
+.main-right {
+
 }
+
 
 .right1 {
-    border-bottom: 1px solid #FFBDBD;
+    border-bottom: 1px solid #FFA4A4;
 }
 
 .right2 {
-    border-bottom: 1px solid #FFBDBD;
+    border-bottom: 1px solid #FFA4A4;
 }
 
 .left1 {
-    border-bottom: 1px solid #FFBDBD;
+    border-bottom: 1px solid #FFA4A4;
 }
 
 footer {
-    border-top: 1px solid #FFBDBD;
+    border-top: 1px solid #FFA4A4;
     text-align: center;
     padding: 30px 0;
-    color: #999;
+    color: #777;
     font-size: 14px;
 }
 
-@media (max-width:500px) {
+.left1 figure{
+    padding-left : 20px;
+
+}
+figure img{
+    border-radius: 10px;
+}
+
+@media (max-width:820px) {
     .content {
         flex-direction: column;
+    }
+
+    .main-left,
+    .main-right {
+        width: auto;
     }
 
     .main-left {
         border-right: none;
     }
 
-    .main-left,
-    .main-right {
-        width:auto;
-    }
     .container {
-        max-width: 500px;
+                width:90%;
+
+        max-width: 700px;
+        margin:auto;
     }
 
+    .right1 {
+        border-top: 1px solid #FFA4A4;
+        padding-top: 20px;
+    }
+
+    .mung {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap:10px;
+    }
+    .mung img{
+        max-width : 150px;
+        height:auto;
+    }
 }
 
-    /*BADFDB*/
+/*BADFDB
+FFBDBD
+*/
