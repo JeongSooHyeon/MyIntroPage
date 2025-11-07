@@ -44,8 +44,13 @@ body {
 
 header {
     border-bottom: 1px solid #FFBDBD;
+
 }
 
+.topHead {
+    display: flex;
+    flex-direction: row;
+}
 
 h1 {
     color: #FFA4A4;
@@ -64,13 +69,15 @@ h2 {
     padding-left: 20px;
 }
 
-h2:hover{
-    color:#FFA4A4;
-    transition:0.2s;
+h2:hover {
+    color: #FFA4A4;
+    transition: 0.2s;
 }
-h2 i{
-    margin-right:5px;
+
+h2 i {
+    margin-right: 5px;
 }
+
 a:link {
     color: #999;
 }
@@ -83,16 +90,17 @@ a:hover {
     display: flex;
     justify-content: space-evenly;
     /* align-items: flex-start; */
-    flex-wrap : wrap;
-    margin : auto 50px;
+    flex-wrap: wrap;
+    margin: auto 50px;
 
 }
 
-.dal{
-    display : flex;
+.dal {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .dal img {
     /* margin-left: 10px; */
     /* max-width: 220px; */
@@ -101,9 +109,10 @@ a:hover {
 
 }
 
-.dal ul{
-    padding-left : 20px;
+.dal ul {
+    padding-left: 20px;
 }
+
 .content {
     display: flex;
     flex-direction: row;
@@ -115,7 +124,7 @@ a:hover {
 .main-left,
 .main-right {
     display: flex;
-    flex:1;
+    flex: 1;
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
@@ -129,7 +138,9 @@ a:hover {
 
 }
 
-.right1, .right2, .left1 {
+.right1,
+.right2,
+.left1 {
     border-bottom: 1px solid #FFA4A4;
 }
 
@@ -141,12 +152,29 @@ footer {
     font-size: 14px;
 }
 
-.left1 figure{
-    padding-left : 20px;
+.left1 figure {
+    padding-left: 20px;
 
 }
-figure img{
+
+figure img {
     border-radius: 10px;
+}
+
+button {
+    background-color: #FFA4A4;
+    border-color: #FCF9EA;
+    color: #FCF9EA;
+    margin: 20px 0px 30px 0px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+button:hover{
+    background-color: #FFBDBD;
+    transform : scale(1.05);
 }
 
 @media (max-width:820px) {
@@ -164,10 +192,10 @@ figure img{
     }
 
     .container {
-                width:90%;
+        width: 90%;
 
         max-width: 700px;
-        margin:auto;
+        margin: auto;
     }
 
     .right1 {
@@ -177,13 +205,14 @@ figure img{
 
     .mung {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         /* align-items: center; */
-        gap:10px;
+        gap: 10px;
     }
-    .mung img{
-        max-width : 150px;
-        height:auto;
+
+    .mung img {
+        max-width: 150px;
+        height: auto;
     }
 }
 

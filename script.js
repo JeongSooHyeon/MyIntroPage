@@ -1,5 +1,5 @@
 // 오늘의 인사말 랜덤 alert
-const greetings = ["안녕", "안녕하세요", "달룡하세요", "달선하세요", "달례하세요"];
+const greetings = ["안녕", "안녕하세요", "달룡하세요", "달선하세요", "달례하세요", "우리 오빠 최고예요❣️"];
 
 function randGreeting() {
     const rand = Math.floor(Math.random() * greetings.length);

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -17,8 +17,10 @@
     <div class="container">
         <div class="inner">
             <header>
-                <h1>정수현<i class="fa-solid fa-face-smile"></i></h1>
-
+                <div class="topHead">
+                    <h1>정수현<i class="fa-solid fa-face-smile"></i></h1>
+                    <button onClick="randGreeting()">인사!</button>
+                </div>
                 <p>신입 프론트엔드 개발자</p>
             </header>
             <main>
