@@ -28,6 +28,7 @@
                     <div class="main-left">
                         <section class="left1">
                             <h2><i class="fa-solid fa-user"></i>프로필</h2>
+                            <div class="profile">
                             <figure>
                                 <img src="취업 사진.jpg" height="150" alt="정수현 프로필 사진" title="정수현 프로필 사진">
                             </figure>
@@ -37,12 +38,28 @@
                                 <li>혈액형 : AB</li>
                                 <li>취미 : 강아지 산책</li>
                             </ul>
+                            </div>
                         </section>
                         <section class="left2">
                             <h2><i class="fa-solid fa-dog"></i>강아지</h2>
+
                             <section class="mung">
 
                                 <div class="dal">
+                                    <div class="leftDal">
+                                        <img id="dal" src="images/dallyong.jpg" width="150" height="150" alt="달룡이"
+                                            title="달룡이">
+                                        <ul>
+                                            <li id="dalName">이름 : 달룡</li>
+                                            <li id="dalHobby">취미 : 간식 바라보기</li>
+                                        </ul>
+                                    </div>
+                                    <div class="rightDal">
+                                        <button onClick="prevMung()">이전!</button>
+                                        <button onClick="nextMung()">다음!</button>
+                                    </div>
+                                </div>
+                                <!-- <div class="dal">
                                     <img src="dallyong.jpg" width="150" height="150" alt="달룡이" title="달룡이">
                                     <ul>
                                         <li>이름 : 달룡</li>
@@ -64,7 +81,7 @@
                                         <li>취미 : 바짓가랭이 물고 끌려댕기기</li>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </section>
                         </section>
                     </div>

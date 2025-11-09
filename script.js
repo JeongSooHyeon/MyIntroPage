@@ -6,17 +6,48 @@ function randGreeting() {
     alert(greetings[rand] + "~");
 }
 
-window.onload = function () {
-    randGreeting();
-};
+// window.onload = function () {
+//     randGreeting();
+// };
 
 // 반복문 연습
-const mungs = [
-    {name : "달룡", hobby:"간식 바라보기"},
-    {name : "달선", hobby:"코 골기"},
-    {name : "달례", hobby:"바짓가랭이 물고 끌려댕기기"},
-]
+// const mungs = [
+//     { name: "달룡", hobby: "간식 바라보기" },
+//     { name: "달선", hobby: "코 골기" },
+//     { name: "달례", hobby: "바짓가랭이 물고 끌려댕기기" },
+// ]
 
-for(let dog of mungs){
-    console.log(`${dog.name}의 취미는 ${dog.hobby}예요.`);
+// for (let dog of mungs) {
+//     console.log(`${dog.name}의 취미는 ${dog.hobby}예요.`);
+// }
+
+
+
+// Day11 강아지 버튼 클릭 시 이미지 이름 취미 변경
+const mungs = [
+    { img: "images/dallyong.jpg", name: "달룡", hobby: " 간식 바라보기" },
+    { img: "images/dalseon.jpg", name: "달선", hobby: "코 골기" },
+    { img: "images/dallye.jpg", name: "달례", hobby: "바짓가랭이 물고 끌려댕기기" },
+];
+
+let mungIdx = 0;
+
+function nextMung() {
+    mungIdx = ++mungIdx % mungs.length;
+    console.log(mungIdx);
+    const current = mungs[mungIdx];
+
+    document.getElementById("dal").src = current.img;
+    document.getElementById("dalName").innerText = `이름 : ${current.name}`;
+    document.getElementById("dalHobby").innerText = `취미 : ${current.hobby}`;
+}
+
+function prevMung() {
+    mungIdx = (--mungIdx + mungs.length) % mungs.length;
+    console.log(mungIdx);
+    const current = mungs[mungIdx];
+
+    document.getElementById("dal").src = current.img;
+    document.getElementById("dalName").innerText = `이름 : ${current.name}`;
+    document.getElementById("dalHobby").innerText = `취미 : ${current.hobby}`;
 }
