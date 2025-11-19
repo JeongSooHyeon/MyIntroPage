@@ -34,7 +34,6 @@ let mungIdx = 0;
 
 function nextMung() {
     mungIdx = ++mungIdx % mungs.length;
-    console.log(mungIdx);
     const current = mungs[mungIdx];
 
     document.getElementById("dal").src = current.img;
@@ -44,10 +43,28 @@ function nextMung() {
 
 function prevMung() {
     mungIdx = (--mungIdx + mungs.length) % mungs.length;
-    console.log(mungIdx);
     const current = mungs[mungIdx];
 
     document.getElementById("dal").src = current.img;
     document.getElementById("dalName").innerText = `이름 : ${current.name}`;
     document.getElementById("dalHobby").innerText = `취미 : ${current.hobby}`;
 }
+
+// 버튼 누르면 배경 변경
+const bgColBtn = document.getElementById('bgColBtn');
+bgColBtn.addEventListener('click', () => {
+    document.documentElement.style.backgroundColor = '#BADFDB';
+})
+
+// 마우스 올리면 프로필 사진 변경
+const myImg = document.getElementById('myImg');
+myImg.addEventListener('mouseover', () =>{
+    myImg.src = "images/automnDalsun.jpg";
+})
+myImg.addEventListener('mouseout', () =>{
+    myImg.src = "images/취업 사진.jpg";
+})
+
+// 키보드로 강아지 사진 변경
+const dal = document.getElementById('dal');
+window.addEventListener('keydown',() => dal.src = "")
