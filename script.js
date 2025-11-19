@@ -6,6 +6,7 @@ function randGreeting() {
     alert(greetings[rand] + "~");
 }
 
+document.querySelector("#greetBtn").addEventListener("click",randGreeting);
 // window.onload = function () {
 //     randGreeting();
 // };
@@ -23,32 +24,8 @@ function randGreeting() {
 
 
 
-// Day11 강아지 버튼 클릭 시 이미지 이름 취미 변경
-const mungs = [
-    { img: "images/dallyong.jpg", name: "달룡", hobby: " 간식 바라보기" },
-    { img: "images/dalseon.jpg", name: "달선", hobby: "코 골기" },
-    { img: "images/dallye.jpg", name: "달례", hobby: "바짓가랭이 물고 끌려댕기기" },
-];
 
-let mungIdx = 0;
 
-function nextMung() {
-    mungIdx = ++mungIdx % mungs.length;
-    const current = mungs[mungIdx];
-
-    document.getElementById("dal").src = current.img;
-    document.getElementById("dalName").innerText = `이름 : ${current.name}`;
-    document.getElementById("dalHobby").innerText = `취미 : ${current.hobby}`;
-}
-
-function prevMung() {
-    mungIdx = (--mungIdx + mungs.length) % mungs.length;
-    const current = mungs[mungIdx];
-
-    document.getElementById("dal").src = current.img;
-    document.getElementById("dalName").innerText = `이름 : ${current.name}`;
-    document.getElementById("dalHobby").innerText = `취미 : ${current.hobby}`;
-}
 
 // 버튼 누르면 배경 변경
 const bgColBtn = document.getElementById('bgColBtn');
@@ -58,13 +35,56 @@ bgColBtn.addEventListener('click', () => {
 
 // 마우스 올리면 프로필 사진 변경
 const myImg = document.getElementById('myImg');
-myImg.addEventListener('mouseover', () =>{
+myImg.addEventListener('mouseover', () => {
     myImg.src = "images/automnDalsun.jpg";
 })
-myImg.addEventListener('mouseout', () =>{
+myImg.addEventListener('mouseout', () => {
     myImg.src = "images/취업 사진.jpg";
 })
 
 // 키보드로 강아지 사진 변경
+// Day11 강아지 버튼 클릭 시 이미지 이름 취미 변경
+
+class MungSlider {
+    constructor(items) {
+        this.items = items;
+        this.index = 0;
+        this.imgEl = document.getElementById("dal");
+        this.nameEl = document.getElementById("dalName");
+        this.hobbyEl = document.getElementById("dalHobby");
+
+        this.render();
+    }
+
+    next() {
+        this.index = ++this.index % this.items.length;
+        this.render();
+    }
+    prev() {
+        this.index = (--this.index + this.items.length) % this.items.length;
+        this.render();
+    }
+    render() {
+        const item = this.items[this.index];
+        this.imgEl.src = item.img;
+        this.nameEl.textContent = `이름 : ${item.name}`;
+        this.hobbyEl.textContent = `취미 : ${item.hobby}`;
+    }
+}
+const slider = new MungSlider([
+    { img: "images/dallyong.jpg", name: "달룡", hobby: " 간식 바라보기" },
+    { img: "images/dalseon.jpg", name: "달선", hobby: "코 골기" },
+    { img: "images/dallye.jpg", name: "달례", hobby: "바짓가랭이 물고 끌려댕기기" },
+]);
+
 const dal = document.getElementById('dal');
-window.addEventListener('keydown',() => dal.src = "")
+window.addEventListener('keydown', (e) => {
+    console.log(e);
+    if (e.key == 'ArrowLeft') {
+        slider.prev();
+    }
+    else if (e.key == 'ArrowRight') {
+        slider.next();
+    }
+
+})

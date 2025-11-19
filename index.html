@@ -19,7 +19,7 @@
             <header>
                 <div class="topHead">
                     <h1>정수현<i class="fa-solid fa-face-smile"></i></h1>
-                    <button onClick="randGreeting()">인사!</button>
+                    <button id="greetBtn">인사!</button>
                     <button id="bgColBtn">배경</button>
                 </div>
                 <p>신입 프론트엔드 개발자</p>
@@ -48,7 +48,7 @@
 
                                 <div class="dal">
                                     <div class="leftDal">
-                                        <img id="dal" src="images/dallyong.jpg" width="150" height="150" alt="달룡이"
+                                        <img id="dal" onerror="this.src='images/dallyong.jpg'" width="150" height="150" alt="달룡이"
                                             title="달룡이">
                                         <ul>
                                             <li id="dalName">이름 : 달룡</li>

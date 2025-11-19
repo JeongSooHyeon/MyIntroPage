@@ -67,11 +67,13 @@ h2 {
     border-bottom: 1px dashed #FFBDBD;
     margin-bottom: 10px;
     padding-left: 20px;
+
+    transition: 0.2s;
+
 }
 
 h2:hover {
-    color: #FFA4A4;
-    transition: 0.2s;
+    color: #FFBDBD;
 }
 
 h2 i {
