@@ -6,7 +6,7 @@ function randGreeting() {
     alert(greetings[rand] + "~");
 }
 
-document.querySelector("#greetBtn").addEventListener("click",randGreeting);
+document.querySelector("#greetBtn").addEventListener("click", randGreeting);
 // window.onload = function () {
 //     randGreeting();
 // };
@@ -88,3 +88,36 @@ window.addEventListener('keydown', (e) => {
     }
 
 })
+
+
+// 좋아요 버튼
+class Like {
+    constructor() {
+        this.likeCnt = 0;
+        this.likeBtn = document.getElementById('likeBtn');
+        this.likeFlag = false;
+    }
+
+    increaseLike() {
+        this.likeCnt++;
+        this.likeBtn.textContent = `좋아요! ${this.likeCnt}`;
+    }
+
+    likeToggle() {
+        if (this.likeFlag) {
+            this.likeFlag = false;
+            this.likeBtn.style.backgroundColor = '#FFA4A4';
+        }
+        else {
+            this.likeFlag = true
+            this.likeBtn.style.backgroundColor = '#BADFDB';
+        }
+    }
+}
+const like = new Like();
+
+function onLikeClick(){
+  like.increaseLike();
+    like.likeToggle();
+}
+like.likeBtn.addEventListener('click', onLikeClick);
