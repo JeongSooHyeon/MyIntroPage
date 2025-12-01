@@ -117,7 +117,7 @@ class Like {
 const like = new Like();
 
 function onLikeClick(){
-  like.increaseLike();
+  //like.increaseLike();
     like.likeToggle();
 }
 like.likeBtn.addEventListener('click', onLikeClick);
