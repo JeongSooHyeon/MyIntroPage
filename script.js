@@ -1,5 +1,5 @@
 // 오늘의 인사말 랜덤 alert
-const greetings = ["안녕", "안녕하세요", "달룡하세요", "달선하세요", "달례하세요", "우리 오빠 최고예요❣️"];
+const greetings = ["안녕", "안녕하세요", "달룡하세요", "달선하세요", "달례하세요"];
 
 function randGreeting() {
     const rand = Math.floor(Math.random() * greetings.length);
@@ -116,8 +116,61 @@ class Like {
 }
 const like = new Like();
 
-function onLikeClick(){
-  //like.increaseLike();
+function onLikeClick() {
+    //like.increaseLike();
     like.likeToggle();
 }
 like.likeBtn.addEventListener('click', onLikeClick);
+
+
+// 좋아하는 것들 리스트
+class FavoriteThings {
+    constructor(items) {
+        this.items = items;
+        this.contentsEl = document.getElementById("profileContents");
+        this.profileBtn = document.getElementById("profileBtn");
+
+        this.currentIndex = 0;
+        this.pageSize = 3;
+        this.isFirst = true;
+    }
+    //
+
+    showFavoriteThings() {
+        const start = this.currentIndex;
+        const end = start + this.pageSize;
+        const slice = this.items.slice(start, end);
+
+        const listItems = slice
+            .map((item, i) => `<li class="fav-item">${this.currentIndex + i + 1}. ${item}</li>`)
+            .join(""); /*배열의 모든 요소를 하나의 문자열로 합친다*/
+
+        this.contentsEl.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;좋아하는 것들 ${'\n'}<ul>${listItems}</ul>`;
+    }
+
+    showNext() {
+        this.currentIndex += this.pageSize;
+          if(this.isFirst){
+            this.currentIndex = 0;
+            this.isFirst=false;
+        }
+        else if (this.currentIndex >= this.items.length) {
+            this.currentIndex = 0;
+            this.isFirst=true;
+        }
+        this.showFavoriteThings();
+    }
+}
+
+const favoriteThings = new FavoriteThings([
+    "누워있기",
+    "엽떡먹기",
+    "달선이주무르기",
+    "강아지랑놀기",
+    "공부하기(?)"
+]);
+
+function onProfileClick() {
+    favoriteThings.showNext();
+}
+favoriteThings.profileBtn.addEventListener('click', onProfileClick);
